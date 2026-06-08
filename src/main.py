@@ -1,10 +1,14 @@
 from database import conectar
+from DB_info import ver_tabla_estudiantes
 
 def main():
-    conexiones = conectar()
-    if conexiones:
-        conexiones.close()
-        print("Conexión Cerrada")
+    conexion = conectar()
+
+    if conexion:
+        print("Conexión exitosa")
+        conexion.close()
+
+    ver_tabla_estudiantes()
 
 if __name__ == "__main__":
     main()
